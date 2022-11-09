@@ -42,23 +42,28 @@ function Chatbot() {
               ))}
               {/* <p className="w-[70%] self-start rounded-t-lg rounded-br-lg bg-[#ee4623] my-1 mx-2 py-1 px-3 text-left text-sm text-white"></p> */}
             </div>
-            <div class="chatbox__footer bg-neutral-800 w-full text-sm p-5 flex flex-row justify-between items-center rounded-b-lg">
-              <input
-                type="text"
-                placeholder="Write a message..."
-                value={msg}
-                className="w-4/5 border-none p-3 rounded-3xl text-left text-black"
-                onChange={(e) => setMsg(e.target.value)}
-              />
-              <button
-                class=" text-white p-2 bg-transparent border-none outline-none cursor-pointer"
-                onClick={() => {
-                  setUserMessage((userMessage) => [...userMessage, msg]);
-                  setMsg("");
-                }}
+            <div class="bg-neutral-800 w-full text-sm p-5 rounded-b-lg">
+              <form
+                className="flex flex-row justify-between items-center"
+                onSubmit={(e) => e.preventDefault()}
               >
-                Send
-              </button>
+                <input
+                  type="text"
+                  placeholder="Write a message..."
+                  value={msg}
+                  className="w-4/5 border-none p-3 rounded-3xl text-left text-black"
+                  onChange={(e) => setMsg(e.target.value)}
+                />
+                <button
+                  class=" text-white p-2 bg-transparent border-none outline-none cursor-pointer"
+                  onClick={() => {
+                    setUserMessage((userMessage) => [...userMessage, msg]);
+                    setMsg("");
+                  }}
+                >
+                  Send
+                </button>
+              </form>
             </div>
           </div>
           <div class="self-end" onClick={() => setToggle(!toggle)}>
