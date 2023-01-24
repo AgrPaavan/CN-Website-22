@@ -1,0 +1,124 @@
+.corporatebg {
+  background-image: url(./assets/bg.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: auto;
+  width: 100vw;
+}
+
+.corporateheading {
+  background: linear-gradient(270.88deg, #ee4623 34.98%, #000000 110.73%);
+  background-clip: text;
+  font-family: 'Montserrat';
+}
+
+.domainsheading {
+  background: rgba(64, 64, 64, 0.3);
+  background-clip: text;
+  font-family: 'Montserrat';
+}
+
+.star1 {
+  animation: star1 1s linear 0s 1 normal;
+}
+
+.star2 {
+  animation: star2 1s linear 1s 1 normal;
+}
+
+.star3 {
+  animation: star3 1s linear 2s 1 normal;
+}
+
+.star4 {
+  animation: star4 1s linear 3s 1 normal;
+}
+
+.reveal {
+  animation: reveal 0.5s ease-in 1s 1 forwards;
+}
+
+.reveal1 {
+  animation: reveal 0.5s ease-in 2s 1 forwards;
+}
+
+.reveal2 {
+  animation: reveal 0.5s ease-in 3s 1 forwards;
+}
+
+.reveal3 {
+  animation: reveal 0.5s ease-in 4s 1 forwards;
+}
+
+.flip {
+  animation: flip 2.5s ease 2s 1 normal;
+}
+
+@keyframes flip {
+  50% {
+    transform: scaleX(-1);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes reveal {
+  0% {
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes star1 {
+  0% {
+    top: 50%;
+    left: 50%;
+    opacity: 1;
+  }
+  100% {
+    position: absolute;
+    transform: rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes star2 {
+  0% {
+    bottom: 50%;
+    left: 50%;
+    opacity: 1;
+  }
+  100% {
+    position: absolute;
+    transform: rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes star3 {
+  0% {
+    top: 50%;
+    right: 50%;
+    opacity: 1;
+  }
+  100% {
+    position: absolute;
+    transform: rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes star4 {
+  0% {
+    bottom: 50%;
+    right: 50%;
+    opacity: 1;
+  }
+  100% {
+    position: absolute;
+    transform: rotate(360deg);
+    opacity: 0;
+  }
+}

@@ -1,12 +1,9 @@
-.teambg{
-    background-image: url(./assets/bg.svg);
-    background-repeat: no-repeat;
-    background-size: auto;
-    cursor: url(./assets/spray.png),default;
-}
-
-.teamheading{
+.teamheading {
     background: linear-gradient(270.88deg, #EE4623 34.98%, #000000 110.73%);
     background-clip: text;
     font-family: 'Montserrat';
+}
+
+canvas {
+    height: 100vh;
 }

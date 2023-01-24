@@ -1,7 +1,1 @@
-<svg width="1061" height="151" viewBox="0 0 1061 151" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="529" cy="15" r="15" fill="white"/>
-<path d="M529 16V67H1V149" stroke="white"/>
-<path d="M354 69V150" stroke="white"/>
-<path d="M704 69V150" stroke="white"/>
-<path d="M529 67H1060.5V151" stroke="white"/>
-</svg>
+<svg width="1061" height="151" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="529" cy="15" r="15" fill="#fff"/><path d="M529 16v51H1v82M354 69v81M704 69v81M529 67h531.5v84" stroke="#fff"/></svg>
