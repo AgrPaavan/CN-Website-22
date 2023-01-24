@@ -26,7 +26,7 @@ function App() {
         whileInView={{ opacity: 1 }}
         transition={{ delay: 8 }}
       ></motion.div>
-      {/* <Chatbot /> */}
+      <Chatbot />
       {/* <Navbar /> */}
       <Routes>
         <Route
