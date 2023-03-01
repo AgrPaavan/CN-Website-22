@@ -24,3 +24,7 @@ main {
     background-clip: text;
     font-family: 'Montserrat';
 }
+
+#landing{
+    margin-top:13vh;
+}

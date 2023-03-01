@@ -96,7 +96,7 @@ export const Events = () => {
             src={shuriken}
             className="md:w-50 md:h-50 w-2/3"
           />
-        </Carousel>
+        </Carousel>*/
       </div>
     </>
   );

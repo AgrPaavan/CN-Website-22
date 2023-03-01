@@ -1,8 +1,15 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import Scroll from "react-scroll";
 // import style from './Footer.module.css'
 // import { div } from 'react-router-dom'
 
 function Footer() {
+  const goToAbout = async () => {
+    var scroller = Scroll.scroller;
+    await new Promise((r) => setTimeout(r, 500));
+    scroller.scrollTo("about", { smooth: true, offset: -80, duration: 200 });
+  };
   return (
     <footer className="dark:bg-opacity-60 backdrop-blur-lg backdrop-filter bg-neutral-900 dark:bg-neutral-900 w-screen">
       <div className="md:grid grid-cols-3 gap-5 py-8 px-5 md:grid-cols-3">
@@ -14,7 +21,7 @@ function Footer() {
           <div className="flex md:space-x-4 space-x-3 justify-center md:justify-center md:mt-0">
             <a
               href="https://www.facebook.com/codingninjasSRM/"
-              className="text-orange-700 hover:text-gray-900 dark:hover:text-white"
+              className="text-orange-700 hover:text-white"
             >
               <svg
                 className="md:w-8 md:h-8 w-6 h-6"
@@ -32,7 +39,7 @@ function Footer() {
             </a>
             <a
               href="https://www.instagram.com/coding.ninjas_srm/?hl=en"
-              className="text-orange-700 hover:text-gray-900 dark:hover:text-white"
+              className="text-orange-700 hover:text-white"
             >
               <svg
                 className="md:w-8 md:h-8 w-6 h-6"
@@ -50,7 +57,7 @@ function Footer() {
             </a>
             <a
               href="https://mobile.twitter.com/ninjassrm"
-              className="text-orange-700 hover:text-gray-900 dark:hover:text-white"
+              className="text-orange-700 hover:text-white"
             >
               <svg
                 className="md:w-8 md:h-8 w-6 h-6"
@@ -64,7 +71,7 @@ function Footer() {
             </a>
             <a
               href="https://in.linkedin.com/company/coding-ninjas-club-srm"
-              className="text-orange-700 hover:text-gray-900 dark:hover:text-white"
+              className="text-orange-700 hover:text-white"
             >
               <svg
                 fill="currentColor"
@@ -84,19 +91,17 @@ function Footer() {
           </h2>
           <ul className="text-white dark:text-white">
             <li className="mb-4">
-              <div to="/" className="">
+              <Link to="/" className="" onClick={goToAbout}>
                 About
-              </div>
+              </Link>
             </li>
             <li className="mb-4">
-              <div to="/" className="">
-                Domains
-              </div>
+              <Link to="/domains">Domains</Link>
             </li>
             <li className="mb-4">
-              <div to="/team" className="">
+              <Link to="/team" className="">
                 Team
-              </div>
+              </Link>
             </li>
           </ul>
         </div>
@@ -108,7 +113,7 @@ function Footer() {
           <div className="flex md:space-x-4 space-x-3 justify-center md:justify-center md:mt-0">
             <a
               href="https://www.facebook.com/codingninjasSRM/"
-              className="text-orange-700 hover:text-gray-900 dark:hover:text-white"
+              className="text-orange-700 hover:text-white"
             >
               <svg
                 className="md:w-8 md:h-8 w-6 h-6"
@@ -126,7 +131,7 @@ function Footer() {
             </a>
             <a
               href="https://www.instagram.com/coding.ninjas_srm/?hl=en"
-              className="text-orange-700 hover:text-gray-900 dark:hover:text-white"
+              className="text-orange-700 hover:text-white"
             >
               <svg
                 className="md:w-8 md:h-8 w-6 h-6"
@@ -144,7 +149,7 @@ function Footer() {
             </a>
             <a
               href="https://mobile.twitter.com/ninjassrm"
-              className="text-orange-700 hover:text-gray-900 dark:hover:text-white"
+              className="text-orange-700 hover:text-white"
             >
               <svg
                 className="md:w-8 md:h-8 w-6 h-6"
@@ -158,7 +163,7 @@ function Footer() {
             </a>
             <a
               href="https://in.linkedin.com/company/coding-ninjas-club-srm"
-              className="text-orange-700 hover:text-gray-900 dark:hover:text-white"
+              className="text-orange-700 hover:text-white"
             >
               <svg
                 fill="currentColor"
@@ -178,19 +183,19 @@ function Footer() {
           </h2>
           <ul className="text-white dark:text-white">
             <li className="mb-4">
-              <div to="/" className="">
+              <Link to="/technical/aiml" className="">
                 AI/ML
-              </div>
+              </Link>
             </li>
             <li className="mb-4">
-              <div to="/" className="">
+              <Link to="/technical/appdev" className="">
                 App Dev
-              </div>
+              </Link>
             </li>
             <li className="mb-4">
-              <div to="/" className="">
-                Sponsors
-              </div>
+              <Link to="/technical/webdev" className="">
+                Web Dev
+              </Link>
             </li>
           </ul>
         </div>

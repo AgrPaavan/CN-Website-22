@@ -18,9 +18,10 @@ import {
   /* useAnimation, */ useInView,
 } from "framer-motion";
 import React, {
-  /* Suspense, */ useEffect,
+  /* Suspense, */ useEffect,useState,
   useRef /* , useState */,
 } from "react";
+import ParticleBGLanding from "../ParticleBG/ParticleBGLanding";
 // import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { Link } from "react-router-dom";
@@ -29,22 +30,26 @@ import { Link } from "react-router-dom";
 // import { ref } from "valtio";
 import { DecoderText } from "../DecoderText";
 // import { Cloud1 } from "../Smoke/Smoke";
-import Tiles from "../Tiles/Tiles";
+import { Tiles } from "../Tiles/Tiles";
 import num1 from "./assets/01.svg";
 import num2 from "./assets/02.svg";
 // import num3 from "./assets/03.svg";
 import arrow from "./assets/arrow.svg";
 // import codekaze from "./assets/CodeKaze 1.svg";
-import filler from "./assets/filler.svg";
+import filler from "./assets/Frame 8.png";
 import group from "./assets/Group.svg";
 import img1 from "./assets/Img1.svg";
-import img2 from "./assets/Img2.svg";
+import img2 from "./assets/non technical.png";
+import Lottie from "lottie-react";
+import Ninja from "./assets/lottie_ninja2.json";
+import landlotty from "./assets/landinglotty.json";
 // import img3 from "./assets/Img3.svg";
 // import appdev from "./assets/intro to appdev 1.svg";
+import ninja from "./assets/cnani.gif";
 import ninja2 from "./assets/Ninja img.svg";
-import ninja from "./assets/ninja.svg";
 import rect from "./assets/Rectangle 126.svg";
 import rect2 from "./assets/Rectangle 127.svg";
+import background from "./assets/1035529526-preview.mp4";
 // import shuriken from "./assets/shuriken wars 1.svg";
 // import House from "./House/house";
 // import state from "./House/ninjahouse.json";
@@ -55,7 +60,13 @@ import style from "./Landing.module.css";
 //   "Demo Sheet",
 // );
 
+import technical from "./assets/technical.png";
+import nontechnical from "./assets/non technical.png"
+
+
+
 function Landing() {
+
   const goToTop = () => {
     window.scrollTo({
       top: 0,
@@ -107,6 +118,10 @@ function Landing() {
 
   return (
     <>
+    
+      <div className="h-screen w-full -z-10 absolute">
+        <ParticleBGLanding />
+      </div>
       <div className="h-screen w-full">
         {/* {House ? (
           <Canvas>
@@ -122,23 +137,18 @@ function Landing() {
         ) : null} */}
       </div>
       <main className="absolute bg">
-        <div className="md:pb-10 pb-20">
+        <div>
+          
+        </div>
+        <div className="mt-13 md:pb-10 pb-20 " style={{ marginTop: "13vh " }}>
           <div className="mx-auto left-6 max-w-screen-lg overflow-hidden justify-center container pb-20">
             <motion.img
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              transition={{ delay: 4, duration: 2 }}
+              transition={{ delay: 2, duration: 2 }}
               src={ninja}
               className="inset-0 object-cover mx-auto mt-5 pt-12 md:pt-0"
               alt="Ninja"
-            />
-            <motion.img
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ delay: 5, duration: 2 }}
-              src={group}
-              className="md:w-auto w-2/3 animate-slow-spin absolute inset-0 object-cover mx-auto mt-10 md:bottom-8 md:top-28 "
-              alt="Group"
             />
           </div>
         </div>
@@ -155,20 +165,14 @@ function Landing() {
               <DecoderText text="ABOUT CN" start={aboutInView} delay={500} />
             </div>
             <p className="text-white xl:text-left text-center mx-2 md:pl-5 md:ml-7 pl-3 pr-3 md:text-2xl text-1 md:pb-20 mb-10">
-              CODING NINJAS CLUB SRM, our syndicate,is one of the institute’s
-              fastest-growing and one of the most popular clubs. Coding Ninjas
-              does a great job of weaving the notion of “simplicity and
-              creativity ” throughout its events and work. We work in
-              collaboration with CODING NINJAS company. We team up with bright
-              minds to create exciting and meaningful experiences. Along the way
-              , We have a footfall of over 50,000 young and creative minds from
-              various concerts around the World. We are a diverse team of
-              budding intellectuals, who are keen and highly driven to create.
-              We want to be the best in our domain.
+            Welcome to the Web Development Club of CN SRM, a community of students who are passionate about creating and building innovative web applications. Our goal is to provide a platform for students to learn and enhance their web development skills, and to collaborate with like-minded individuals to bring their ideas to life.
+
+            Our club offers a wide range of activities and events that cater to students of all levels, from beginners to experienced developers. Whether you are interested in learning HTML, CSS, and JavaScript, or you want to explore the latest trends in web development, our club has something for everyone.
+
             </p>
           </div>
           <div className="hidden xl:block pl-20 pr-0">
-            <img src={filler} className="md:w-2/3 ml-10 pb-5 pt-20" alt="" />
+            <img loading="lazy" src={filler} className="md:w-2/3 ml-10 pb-5 pt-20" alt="" />
           </div>
         </div>
       </div>
@@ -194,6 +198,7 @@ function Landing() {
               <div className="absolute inset-0 justify-center ">
                 <img
                   className="md:w-1/2 pl-5 md:h-25 md:pl-10 w-2/3"
+                  loading="lazy"
                   src={num1}
                   alt=""
                 />
@@ -207,29 +212,33 @@ function Landing() {
               full website, this domain completes it all. So, fasten your seat
               belts for the technical fight.
             </p>
+
             <div className="flex md:pb-20 pb-10">
               <div className="flex-none text-[#EE4623] text-left ml-12 mr-0 font-bold">
-                VIEW DETAILS
+                <Link to="/technical">VIEW DETAILS</Link>
               </div>
-              <Link to="/technical">
+              <div>
                 {" "}
-                <img
-                  className="flex-intial w-4 h-4 mt-1 ml-5"
-                  src={arrow}
-                  alt=""
-                />
-              </Link>
+                <Link to="/technical">
+                  <img
+                    className="flex-intial w-4 h-4 mt-1 ml-5"
+                    loading="lazy"
+                    src={arrow}
+                    alt=""
+                  />
+                </Link>
+              </div>
             </div>
           </div>
           {/* image */}
           <div data-aos="fade" className=" xl:ml-20 xl:pl-14 ml-10 pr-10">
-            <img className="lg:pl-10 pl-0" src={img1} alt="" />
+            <img className="lg:pl-10 pl-0" loading="lazy" src={technical} alt="" />
           </div>
         </div>
         <div className="grid grid-cols-1 gap-5 py-8 px-3 md:grid-cols-2 ">
           {/* image */}
           <div data-aos="fade" className="hidden md:block ml-0 pr-5">
-            <img className="lg:pl-10 pl-0" src={img2} alt="" />
+            <img className="lg:pl-10 pl-0" src={nontechnical} alt="" />
           </div>
           {/* Corporate*/}
           <div data-aos="fade-up">
@@ -240,6 +249,7 @@ function Landing() {
               <div className="absolute inset-0 justify-center ">
                 <img
                   className="md:w-1/2 pl-5 md:h-25 md:pl-10 w-2/3"
+                  loading="lazy"
                   src={num2}
                   alt=""
                 />
@@ -257,12 +267,12 @@ function Landing() {
             </p>
             <div className="flex md:pb-20 pb-10">
               <div className="flex-none text-[#EE4623] text-left ml-12 mr-0 font-bold">
-                VIEW DETAILS
-              </div>
+                <Link to="/nontechnical"> VIEW DETAILS</Link>
+              </div>{" "}
               <Link to="/nontechnical">
-                {" "}
                 <img
                   className="flex-intial w-4 h-4 mt-1 ml-5"
+                  loading="lazy"
                   src={arrow}
                   alt=""
                 />
@@ -296,7 +306,7 @@ function Landing() {
           </Link>
         </div>
         <div className="absolute right-0 bg-black">
-          <img src={rect} alt="" />
+          <img loading="lazy" src={rect} alt="" />
         </div>
       </div>
       <Tiles />
@@ -358,11 +368,11 @@ function Landing() {
 
             </Carousel> */}
       <div className="absolute left-0 bg-black">
-        <img src={rect2} alt="" />
+        <img loading="lazy" src={rect2} alt="" />
       </div>
 
       <div className="justify-center md:mt-10 pt-20 pb-20 md:mb-10 px-20 ">
-        <img src={ninja2} className="mx-auto" alt="" />
+        <Lottie  animationData={Ninja} className="mx-auto h-64" alt="" />
       </div>
     </>
   );

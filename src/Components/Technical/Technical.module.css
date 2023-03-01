@@ -1,5 +1,5 @@
 .technicalbg {
-  background-image: url(./assets/bg.svg);
+  /* background-image: url(./assets/bg.svg); */
   background-repeat: no-repeat;
   background-size: cover;
   height: auto;
@@ -9,13 +9,13 @@
 .technicalheading {
   background: linear-gradient(270.88deg, #ee4623 34.98%, #000000 110.73%);
   background-clip: text;
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
 }
 
 .domainsheading {
   background: rgba(64, 64, 64, 0.3);
   background-clip: text;
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
 }
 
 .star1 {
